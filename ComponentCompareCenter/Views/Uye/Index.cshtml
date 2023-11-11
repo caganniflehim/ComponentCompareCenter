@@ -1,0 +1,50 @@
+﻿@using ComponentCompareCenter.Models.Siniflar
+@model List<Uye>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Üyeler</h2>
+
+<table class="table table-primary table-hover">
+    <tr>
+
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Adres</th>
+        <th>Eposta</th>
+        <th>Telno</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+
+            <td>
+                @k.uyeID
+            </td>
+            <td>
+                @k.uyeAd
+            </td>
+            <td>
+                @k.uyeSoyad
+            </td>
+
+            <td>
+                @k.uyeAdresi
+            </td>
+            <td>
+                @k.uyeEposta
+            </td>
+            <td>
+                @k.uyeTelNo
+            </td>
+            <td><a href="/Uye/UyeSil/@k.uyeID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Uye/UyeGetir/@k.uyeID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Uye/UyeEkle" class="btn btn-primary">Ekle Üye</a>

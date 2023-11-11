@@ -1,0 +1,244 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.AnakartOzellik
+@{
+    ViewBag.Title = "AnakartDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    table, th, td {
+        border: 0;
+        border-collapse: collapse;
+        padding: 2px;
+    }
+
+    .baslikRenk {
+        font-size: small;
+        color: darkgrey;
+    }
+</style>
+
+
+<br />
+<h2>Detay</h2>
+
+<table style="width:100%">
+    <tr>
+        <th rowspan="8"><img src="@Model.Uruns.urunGorsel" class="w-75" /></th>
+        <th colspan="4">
+            @Model.Uruns.UrunAd
+        </th>
+    </tr>
+    <tr>
+
+        <td colspan="3">
+            @using (Html.BeginForm("AddCompareBasket", "CompareBasket"))
+            {
+                @Html.HiddenFor(i => i.ID)
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-node-plus" aria-hidden="true"></i>
+                    Karşılasştır
+                </button>
+                @*<a href="~/Views/CompareBasket/Index"><span class="bi bi-node-plus h2" style="float:left">
+                    </span><div class="h5 p-4">Karşılaştır</div></a>*@
+            }
+        </td>
+        <td>@Model.TeknikPuan</td>
+    </tr>
+    <tr>
+        <td>Yonga Seti Modeli</td>
+        <td>Form Faktörü</td>
+        <td>İşlemci Soketi</td>
+        <td>Bellek Teknolojisi</td>
+    </tr>
+    <tr class="baslikRenk">
+        <td>@Model.YongaSetiModeli</td>
+        <td>@Model.FormFaktor</td>
+        <td>@Model.IslemciSoketi</td>
+        <td>@Model.BellekTeknolojisi</td>
+    </tr>
+    <tr>
+        <td>Bellek Saat Hızı</td>
+        <td>Bellek Kanalı</td>
+        <td>M2 Yuvasi</td>
+        <td>Bluetooth</td>
+    </tr>
+    <tr class="baslikRenk">
+        <td>@Model.BellekSaatHizi</td>
+        <td>@Model.BellekKanali</td>
+        <td>
+            @if (Model.M2Yuvasi == true)
+            {
+                <b class="bi bi-check-circle" style="font-size:2rem; color: rgb(0, 128, 55);"></b>
+                <i style="color: rgb(0, 128, 55);">Var</i>
+            }
+            else
+            {
+                <b class="bi bi-x-circle" style="font-size: 2rem; color: rgb(255, 0, 0);"></b>
+                <i style="color: rgb(255, 0, 0); ">Yok</i>
+            }
+        </td>
+        <td>
+            @if (Model.Bluetooth == true)
+            {
+                <b class="bi bi-check-circle" style="font-size:2rem; color: rgb(0, 128, 55);"></b><i style="color: rgb(0, 128, 55);">Var</i>
+            }
+            else
+            {
+                <b class="bi bi-x-circle" style="font-size: 2rem; color: rgb(255, 0, 0);"></b><i style="color: rgb(255, 0, 0);">Yok</i>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Aydınlatma</td>
+        <td>WiFi</td>
+        <td>Hız Aşırtma (Overclock)</td>
+        <td>Çıkış Yılı</td>
+    </tr>
+    <tr class="baslikRenk">
+        <td>
+            @if (Model.Aydınlatma == true)
+            {
+                <b class="bi bi-check-circle" style="font-size:2rem; color: rgb(0, 128, 55);"></b><i style="color: rgb(0, 128, 55);">Var</i>
+            }
+            else
+            {
+                <b class="bi bi-x-circle" style="font-size: 2rem; color: rgb(255, 0, 0);"></b><i style="color: rgb(255, 0, 0);">Yok</i>
+            }
+        </td>
+        <td>
+            @if (Model.WiFi == true)
+            {
+                <b class="bi bi-check-circle" style="font-size:2rem; color: rgb(0, 128, 55);"></b><i style="color: rgb(0, 128, 55);">Var</i>
+            }
+            else
+            {
+                <b class="bi bi-x-circle" style="font-size: 2rem; color: rgb(255, 0, 0);"></b><i style="color: rgb(255, 0, 0);">Yok</i>
+            }
+        </td>
+        <td>
+            @if (Model.HizAsirtma == true)
+            {
+                <b class="bi bi-check-circle" style="font-size:2rem; color: rgb(0, 128, 55);"></b><i style="color: rgb(0, 128, 55);">Var</i>
+            }
+            else
+            {
+                <b class="bi bi-x-circle" style="font-size: 2rem; color: rgb(255, 0, 0);"></b><i style="color: rgb(255, 0, 0);">Yok</i>
+            }
+        </td>
+        <td>
+            @Model.CikisYili
+        </td>
+    </tr>
+</table>
+
+
+
+<hr />
+<footer class="text-center text-sm-start bg-light text-muted shadow-sm p-0 m-0 bg-white rounded" style="background-color: rgba(0, 0, 0, 0.2);">
+    @*Section: Social media*@
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 ">
+        @*Left*@
+        <div class="me-5 d-none d-lg-block">
+            <span>Sosyal ağlarda bizimle bağlantı kurun:</span>
+        </div>
+        @*Left
+            Right*@
+    <div>
+        <a href="https://www.facebook.com/areledu/?locale=tr_TR" target="_blank" class="me-4 link-secondary">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/areledu?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" class="me-4 link-secondary">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.istanbularel.edu.tr/" target="_blank" class="me-4 link-secondary">
+            <i class="fab fa-google"></i>
+        </a>
+        <a href="https://www.instagram.com/areledu/?hl=tr" class="me-4 link-secondary">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+        @*Right*@
+    </section>
+    @*Section: Social media
+        Section: Links*@
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            @*Grid row*@
+            <div class="row mt-3">
+                @*Grid column*@
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3 text-secondary"></i>COMCOMPARE
+                    </h6>
+                    <p>
+                        Sayfamız Bilgisayar Donanım Parçalarını Karşılaştırmada
+                        Size Yardımcı Olacaktır.6 Kategoriden Oluşmaktadır
+                    </p>
+                </div>
+                @*Grid column*@
+                @*Grid column*@
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Karşılaştırma
+                    </h6>
+                    <p>
+                        <a href="/Home/AnakartListele" class="text-reset">Anakart</a>
+                    </p>
+                    <p>
+                        <a href="/Home/MonitorListele" class="text-reset">Monitör</a>
+                    </p>
+                    <p>
+                        <a href="/Home/İslemciListele" class="text-reset">İşlmeci</a>
+                    </p>
+                    <p>
+                        <a href="/Home/EkranKartiListele" class="text-reset">Ekran kartı</a>
+                    </p>
+                    <p>
+                        <a href="/Home/RamListele" class="text-reset">Ram</a>
+                    </p>
+                    <p>
+                        <a href="/Home/PowerSupplyListele" class="text-reset">Power Suppley</a>
+                    </p>
+                </div>
+                @*Grid column
+                    Grid column*@
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Kulanışlı Bağlantılar
+                    </h6>
+                    <p>
+                        <a href="/Home/Hakkımızda" class="text-reset">Hakımızda</a>
+                    </p>
+                    <p>
+                        <a href="/Home/Destek" class="text-reset">Destek</a>
+                    </p>
+                    <p>
+                        <a href="/Home/Iletisim" class="text-reset">İletişim</a>
+                    </p>
+
+                </div>
+                @*Grid column
+                    Grid column*@
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 ">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3 text-secondary"></i>Hayaller New York Gerçekler ŞİPŞİRİNEVLER</p>
+                    <p>
+                        <i class="fas fa-envelope me-3 text-secondary"></i>
+                        omercagand@gmail.com / esmanurdinc10@gmail.com
+                    </p>
+                    <p><i class="fas fa-phone-alt "></i> (0507) 900 35 17</p>
+                    <p><i class="fas fa-phone-alt text-secondary"></i> (0542) 691 60 20</p>
+                    @*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.6671280754967!2d28.498166811184458!3d41.05440791646424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55cd98126a3e5%3A0x2d4f15f338759778!2sArel%20Universitesi%20Tepekent%20Kampusu!5e0!3m2!1str!2str!4v1685290840627!5m2!1str!2str" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>*@
+                </div>
+                @*Grid column*@
+            </div>
+            @*Grid row*@
+        </div>
+    </section>
+    @*Section: Links*@
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+</footer>

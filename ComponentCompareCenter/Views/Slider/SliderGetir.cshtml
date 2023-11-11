@@ -1,0 +1,24 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.Slider
+@{
+    ViewBag.Title = "SliderGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>SliderGetir</h2>
+
+    <form action="/Slider/SliderGuncelle/@Model.SliderId" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Baslik)
+            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Gorsel)
+            <input class="form-control" type="file" name="sliderimage" />
+            @Html.LabelFor(x => x.Aciklama)
+            @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+            <br />
+            @Html.HiddenFor(x => x.SliderId)
+        </div>
+
+        <button class="btn btn-warning">Güncelle</button>
+</form>

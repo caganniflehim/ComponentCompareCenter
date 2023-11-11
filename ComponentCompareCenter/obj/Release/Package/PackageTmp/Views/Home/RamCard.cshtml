@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ComponentCompareCenter.Models.Siniflar.RAMOzellik>
+@{
+    ViewBag.Title = "RamCard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-11">
+        <h3 class=" p-2">Son Eklenen Anakartlar</h3>
+    </div>
+    <div class="col-1">
+        <a href="/Home/RamListele/" class="btn" style="background-color: #f4a460;"><b>Tümünü Gör<i class="bi bi-chevron-double-right"></i></b></a>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-2">
+            <div class="card h-100">
+                <h5 class="card-title">@item.Uruns.UrunAd</h5>
+                <img class="card-img-top h-50 " src="@item.Uruns.urunGorsel" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h5 class="card-title bi bi-arrow-right" style="color:#F4a460">Bellek Hızı</h5>
+                    <p class="card-text lead">@item.BellekHizi</p>
+                    <h5 class="card-title bi bi-arrow-right" style="color:#F4a460">Bellek Kapasitesi</h5>
+                    <p class="card-text lead">@item.BellekKapasitesi</p>
+
+                    <h5 class="card-title bi bi-arrow-right" style="color:#F4a460">Bellek Teknolojisi</h5>
+                    <p class="card-text lead">@item.BellekTeknoloji</p>
+
+                    <h5 class="card-title bi bi-arrow-right" style="color:#F4a460">Tepkime Süresi</h5>
+                    <p class="card-text lead">@item.TepkimeSuresi</p>
+
+                    <h5 class="card-title bi bi-arrow-right" style="color:#F4a460">Fiyat</h5>
+                    <p class="card-text lead">@item.Fiyat</p>
+
+
+
+                    <a href="/Home/RamDetay/@item.ID" id="linkHover" class="btn" style="background-color: #FFF5EE;">Ürüne Git</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

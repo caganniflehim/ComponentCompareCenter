@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ComponentCompareCenter.Models.Siniflar.Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Kuallanici Adı</th>
+        <th>Şifre</th>
+        <th>Yetki</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>
+                @a.AdminID
+            </td>
+            <td>
+                @a.KullaniciAdi
+            </td>
+            <td>
+                @a.Sifre
+            </td>
+            <td>
+                @a.Yetki
+            </td>
+            <td><a href="/Admin/AdminSil/@a.AdminID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/AdminGetir/@a.AdminID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/AdminEkle" class="btn btn-primary">Ekle</a>

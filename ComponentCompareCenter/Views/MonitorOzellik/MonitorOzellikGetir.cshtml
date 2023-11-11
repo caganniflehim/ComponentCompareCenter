@@ -1,0 +1,54 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.MonitorOzellik
+@{
+    ViewBag.Title = "MonitorOzellikGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>MonitorOzellikGetir</h2>
+<br />
+@using (Html.BeginForm("MonitorOzellikGuncelle", "MonitorOzellik", FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+    @Html.LabelFor(x => x.Uruns.UrunID)
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new
+    { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EkranBoyutu)
+    @Html.TextBoxFor(x => x.EkranBoyutu, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.YenilemeHizi)
+    @Html.TextBoxFor(x => x.YenilemeHizi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EkranCozunurlugu)
+    @Html.TextBoxFor(x => x.EkranCozunurlugu, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EkranTeknolojisi)
+    @Html.TextBoxFor(x => x.EkranTeknolojisi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TepkiSuresi)
+    @Html.TextBoxFor(x => x.TepkiSuresi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.HDMI)
+    @Html.TextBoxFor(x => x.HDMI, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.DisplayPort)
+    @Html.TextBoxFor(x => x.DisplayPort, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Hoperlor)
+    @Html.TextBoxFor(x => x.Hoperlor, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CikisYili)
+    @Html.TextBoxFor(x => x.CikisYili, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeknikPuan)
+    @Html.TextBoxFor(x => x.TeknikPuan, new { @class = "form-control" })
+    <br />
+
+    @Html.HiddenFor(x => x.ID)
+</div>
+    <button class="btn btn-warning">Güncelle</button>
+}

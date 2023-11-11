@@ -1,0 +1,15 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.Marka
+@{
+    ViewBag.Title = "MarkaEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>MarkaEkle</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.MarkaAd)
+    @Html.TextBoxFor(x => x.MarkaAd, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>
+

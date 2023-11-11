@@ -1,0 +1,54 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.RAMOzellik
+@{
+    ViewBag.Title = "RAMOzellikEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+</br>
+<h2>RAMOzellikEkle</h2>
+</br>
+
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.Uruns.UrunID)
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new
+    { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BellekHizi)
+    @Html.TextBoxFor(x => x.BellekHizi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BellekKapasitesi)
+    @Html.TextBoxFor(x => x.BellekKapasitesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BellekTeknoloji)
+    @Html.TextBoxFor(x => x.BellekTeknoloji, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TepkimeSuresi)
+    @Html.TextBoxFor(x => x.TepkimeSuresi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BellekSayisi)
+    @Html.TextBoxFor(x => x.BellekSayisi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sogutucu)
+    @Html.TextBoxFor(x => x.Sogutucu, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunAilesi)
+    @Html.TextBoxFor(x => x.UrunAilesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunSerisi)
+    @Html.TextBoxFor(x => x.UrunSerisi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Platform)
+    @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CikisYili)
+    @Html.TextBoxFor(x => x.CikisYili, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeknikPuan)
+    @Html.TextBoxFor(x => x.TeknikPuan, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

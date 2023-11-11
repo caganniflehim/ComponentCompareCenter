@@ -1,0 +1,95 @@
+﻿@model IPagedList<ComponentCompareCenter.Models.Siniflar.IslemciOzellik>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>İşlemci Özellik</h2>
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>ID</th>
+        <th>UrunAd</th>
+        <th>Fiyat</th>
+        <th>Cekirdek</th>
+        <th>SanalCekirdek</th>
+        <th>TemelFrekans</th>
+        <th>BellekTuru</th>
+        <th>Soket</th>
+        <th>DahiliGrafikIslemci</th>
+        <th>OnBellek</th>
+        <th>IslenciSerisi</th>
+        <th>Jenerasyon</th>
+        <th>IslemciMimarisi</th>
+        <th>CikisYili</th>
+        <th>TeknikPuan</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>
+                @i.ID
+            </td>
+            <td>
+                @i.Uruns.UrunAd
+            </td>
+            <td>
+                @i.Fiyat
+            </td>
+            <td>
+                @i.Cekirdek
+            </td>
+            <td>
+                @i.SanalCekirdek
+            </td>
+            <td>
+                @i.TemelFrekans
+            </td>
+            <td>
+                @i.BellekTuru
+            </td>
+            <td>
+                @i.Soket
+            </td>
+            <td>
+                @i.DahiliGrafikIslemci
+            </td>
+            <td>
+                @i.OnBellek
+            </td>
+            <td>
+                @i.IslenciSerisi
+            </td>
+            <td>
+                @i.Jenerasyon
+            </td>
+            <td>
+                @i.IslemciMimarisi
+            </td>
+            <td>
+                @i.CikisYili
+            </td>
+            <td>
+                @i.TeknikPuan
+            </td>
+            <td><a href="/IslemciOzellik/IslemciOzellikSil/@i.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/IslemciOzellik/IslemciOzellikGetir/@i.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/IslemciOzellik/IslemciOzellikEkle" class="btn btn-primary">Ekle</a>
+
+<br />
+<br />
+@{
+    var pagerOptions = new PagedListRenderOptions
+    {
+        LiElementClasses = new[] { "btn", "btn-light", "text-black" }
+    };
+}
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), pagerOptions)

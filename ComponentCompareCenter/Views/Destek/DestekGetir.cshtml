@@ -1,0 +1,26 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.Destek
+@{
+    ViewBag.Title = "DestekGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>DestekGetir</h2>
+<br />
+@using (Html.BeginForm("DestekGuncelle", "Destek", FormMethod.Post))
+{
+    <div class="form-group">
+
+
+        @Html.LabelFor(x => x.sorular)
+        @Html.TextBoxFor(x => x.sorular, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.cevaplar)
+        @Html.TextBoxFor(x => x.cevaplar, new { @class = "form-control" })
+        <br />
+
+        @Html.HiddenFor(x => x.Id)
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}
+

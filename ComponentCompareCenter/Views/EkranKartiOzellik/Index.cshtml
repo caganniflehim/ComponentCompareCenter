@@ -1,0 +1,158 @@
+﻿@model IPagedList<ComponentCompareCenter.Models.Siniflar.EkranKartiOzellik>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Ekran Kartı Özellik </h2>
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Urun Adı</th>
+        <th>Fiyat</th>
+        <th>İşlemci Üretici</th>
+        <th>Bellek Boyutu</th>
+        <th>Bellek Türü</th>
+        <th>GPU Çekirdek</th>
+        <th>Grafik Kartı Gücü</th>
+        <th>VR Desteği</th>
+        <th>Çoklu GPU</th>
+        <th>Bağlantı Ara Yüz</th>
+        <th>Display Port</th>
+        <th>HDMI</th>
+        <th>Soğutma Tipi</th>
+        <th>Fan Sayısı</th>
+        <th>Grafik İşlemci</th>
+        <th>İşlemci Üretici</th>
+        <th>GPU Mimarisi</th>
+        <th>Directx</th>
+        <th>Çıkış Yıllı</th>
+        <th>Teknik Puan</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.ID
+            </td>
+
+            <td>
+                @k.Uruns.UrunAd
+            </td>
+
+            <td>
+                @k.Fiyat
+            </td>
+
+            <td>
+                @k.İslemciÜretici
+            </td>
+
+            <td>
+                @k.BellekBoyutu
+            </td>
+
+
+            <td>
+                @k.BellekTürü
+            </td>
+
+
+            <td>
+                @k.GPUÇekirdek
+            </td>
+
+
+            <td>
+                @k.GrafikKartıGücü
+            </td>
+
+
+            <td>
+                @k.VRDestegi
+            </td>
+
+
+            <td>
+                @k.ÇokluGPU
+            </td>
+
+
+            <td>
+                @k.BaglantiArayuz
+            </td>
+
+
+            <td>
+                @k.DisplayPort
+            </td>
+
+
+            <td>
+                @k.HDMI
+            </td>
+
+
+            <td>
+                @k.SogutmaTipi
+            </td>
+
+
+            <td>
+                @k.FanSayısı
+            </td>
+
+
+            <td>
+                @k.Grafikİslemci
+            </td>
+
+
+            <td>
+                @k.İşlemciÜretici
+            </td>
+
+
+            <td>
+                @k.GPUMimarisi
+            </td>
+
+
+            <td>
+                @k.Directx
+            </td>
+
+
+            <td>
+                @k.CikisYili
+            </td>
+
+
+            <td>
+                @k.TeknikPuan
+            </td>
+
+            <td><a href="/EkranKartiOzellik/EkranKartiOzellikSil/@k.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/EkranKartiOzellik/EkranKartiOzellikGetir/@k.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+
+    }
+
+</table>
+<a href="/EkranKartiOzellik/EkranKartiOzellikEkle" class="btn btn-primary">Ekle</a>
+
+<br />
+<br />
+@{
+    var pagerOptions = new PagedListRenderOptions
+    {
+        LiElementClasses = new[] { "btn", "btn-light", "text-black" }
+    };
+}
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), pagerOptions)

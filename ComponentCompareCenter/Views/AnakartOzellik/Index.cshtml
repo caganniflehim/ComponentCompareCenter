@@ -1,0 +1,98 @@
+﻿@model IPagedList<ComponentCompareCenter.Models.Siniflar.AnakartOzellik>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Anakart Özellik</h2>
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>ID</th>
+        <th>UrunAd</th>
+        <th>Fiyat</th>
+        <th>YongaSetiModeli</th>
+        <th>FormFaktor</th>
+        <th>IslemciSoketi</th>
+        <th>BellekTeknolojisi</th>
+        <th>BellekSaatHizi</th>
+        <th>BellekKanali</th>
+        <th>M2Yuvasi</th>
+        <th>HizAsirtma</th>
+        <th>Bluetooth</th>
+        <th>Aydınlatma</th>
+        <th>WiFi</th>
+        <th>CikisYili</th>
+        <th>TeknikPuan</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>
+                @a.ID
+            </td>
+            <td>
+                @a.Uruns.UrunAd
+            </td>
+            <td>
+                @a.Fiyat
+            </td>
+            <td>
+                @a.YongaSetiModeli
+            </td>
+            <td>
+                @a.FormFaktor
+            </td>
+            <td>
+                @a.IslemciSoketi
+            </td>
+            <td>
+                @a.BellekTeknolojisi
+            </td>
+            <td>
+                @a.BellekSaatHizi
+            </td>
+            <td>
+                @a.BellekKanali
+            </td>
+            <td>
+                @a.M2Yuvasi
+            </td>
+            <td>
+                @a.HizAsirtma
+            </td>
+            <td>
+                @a.Bluetooth
+            </td>
+            <td>
+                @a.Aydınlatma
+            </td>
+            <td>
+                @a.WiFi
+            </td>
+            <td>
+                @a.CikisYili
+            </td>
+            <td>
+                @a.TeknikPuan
+            </td>
+            <td><a href="/AnakartOzellik/AnakartOzellikSil/@a.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/AnakartOzellik/AnakartOzellikGetir/@a.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/AnakartOzellik/AnakartOzellikEkle" class="btn btn-primary">Ekle</a>
+<br />
+<br />
+@{
+    var pagerOptions = new PagedListRenderOptions
+    {
+        LiElementClasses = new[] { "btn", "btn-light", "text-black" }
+    };
+}
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), pagerOptions)

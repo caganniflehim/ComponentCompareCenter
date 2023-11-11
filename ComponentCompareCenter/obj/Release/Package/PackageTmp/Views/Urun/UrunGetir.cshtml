@@ -1,0 +1,33 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>UrunGetir</h2>
+
+
+
+    <form action="/Urun/UrunGuncelle/@Model.UrunID" method="post" enctype="multipart/form-data">
+        
+        <div class="form-group">
+            @Html.LabelFor(x => x.UrunAd)
+            @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.urunGorsel)
+            <input class="form-control" type="file" name="urunimage" />
+            <br />
+            @Html.LabelFor(x => x.Kategori.KategoriID)
+            @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+            @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new
+            { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.MarkaAd.MarkaID)
+            @Html.DropDownListFor(x => x.Markaid, (List<SelectListItem>)ViewBag.dgr2, new
+            { @class = "form-control" })
+
+            @Html.HiddenFor(x => x.UrunID)
+        </div>
+        <button class="btn btn-warning">Güncelle</button>
+        
+</form>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ComponentCompareCenter.Models.Siniflar.Slider>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="owl-carousel owl-theme">
+    @foreach (var item in Model)
+    {
+        <div>
+            <img src="@item.Gorsel" alt="@item.Baslik" style="height: 500px; width: 100%; margin-top:1%;">
+        </div>
+    }
+
+</div>
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                autoplay: true,
+                loop: true,
+                margin: 10,
+                nav: true,
+                items: 1
+            })
+        });
+    </script>
+}

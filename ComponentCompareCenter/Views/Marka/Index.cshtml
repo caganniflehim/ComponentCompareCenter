@@ -1,0 +1,51 @@
+﻿@model IPagedList<ComponentCompareCenter.Models.Siniflar.Marka>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Markalar</h2>
+<br />
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Marka Ad</th>
+
+    </tr>
+
+    @foreach (var m in Model)
+    {
+        // Model değişkeni null değilse, burada bir işlem yapabilirsiniz
+        <tr>
+            <td>
+                @m.MarkaID
+            </td>
+            <td>
+                @m.MarkaAd
+            </td>
+            <td>
+                <a href="/Marka/MarkaSil/@m.MarkaID" class="btn btn-outline-primary">Sil</a>
+
+            </td>
+            <td>
+                <a href="/Marka/MarkaGetir/@m.MarkaID" class="btn btn-outline-primary">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Marka/MarkaEkle" class="btn btn-outline-primary">MarkaEkle</a>
+
+<br />
+<br />
+@{
+    var pagerOptions = new PagedListRenderOptions
+    {
+        LiElementClasses = new[] { "btn", "btn-light", "text-black" }
+    };
+}
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), pagerOptions)

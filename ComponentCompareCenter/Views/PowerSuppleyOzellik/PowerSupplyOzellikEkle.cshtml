@@ -1,0 +1,49 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.PowerSuppleyOzellik
+@{
+    ViewBag.Title = "PowerSupplyOzellikEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>PowerSupplyOzellikEkle</h2>
+<br />
+
+<form class="form-group" method="post">
+
+
+    @Html.LabelFor(x => x.Uruns.UrunID)
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new
+    { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Guc)
+    @Html.TextBoxFor(x => x.Guc, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.GucVerimliligi)
+    @Html.TextBoxFor(x => x.GucVerimliligi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.KabloTipi)
+    @Html.TextBoxFor(x => x.KabloTipi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FanBoyutu)
+    @Html.TextBoxFor(x => x.FanBoyutu, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PFC)
+    @Html.TextBoxFor(x => x.PFC, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Anahtar)
+    @Html.TextBoxFor(x => x.Anahtar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Model)
+    @Html.TextBoxFor(x => x.Model, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CikisYili)
+    @Html.TextBoxFor(x => x.CikisYili, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeknikPuan)
+    @Html.TextBoxFor(x => x.TeknikPuan, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

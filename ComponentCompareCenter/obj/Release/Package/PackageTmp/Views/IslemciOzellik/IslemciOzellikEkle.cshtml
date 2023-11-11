@@ -1,0 +1,59 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.IslemciOzellik
+
+@{
+    ViewBag.Title = "IslemciOzellikEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>IslemciOzellikEkle</h2>
+<br />
+
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.Uruns.UrunID)
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new
+    { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Cekirdek)
+    @Html.TextBoxFor(x => x.Cekirdek, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.SanalCekirdek)
+    @Html.TextBoxFor(x => x.SanalCekirdek, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TemelFrekans)
+    @Html.TextBoxFor(x => x.TemelFrekans, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BellekTuru)
+    @Html.TextBoxFor(x => x.BellekTuru, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Soket)
+    @Html.TextBoxFor(x => x.Soket, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.DahiliGrafikIslemci)
+    @Html.TextBoxFor(x => x.DahiliGrafikIslemci, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.OnBellek)
+    @Html.TextBoxFor(x => x.OnBellek, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.IslenciSerisi)
+    @Html.TextBoxFor(x => x.IslenciSerisi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Jenerasyon)
+    @Html.TextBoxFor(x => x.Jenerasyon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.IslemciMimarisi)
+    @Html.TextBoxFor(x => x.IslemciMimarisi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CikisYili)
+    @Html.TextBoxFor(x => x.CikisYili, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeknikPuan)
+    @Html.TextBoxFor(x => x.TeknikPuan, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

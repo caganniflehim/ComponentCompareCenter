@@ -1,0 +1,29 @@
+﻿
+@model ComponentCompareCenter.Models.Siniflar.Hakkimizda
+@{
+    ViewBag.Title = "HakkimizdaGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>HakkimizdaGetir</h2>
+
+<script type="text/javascript">
+    CKEDITOR.replace('editor')
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.Açıklama)
+        <div class="col-md-10">
+            <textarea name="Açıklama" class="ckeditor">@Model.Açıklama</textarea>
+        </div>
+
+        <br />
+
+        @Html.HiddenFor(x => x.Id)
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}

@@ -1,0 +1,83 @@
+﻿@model IPagedList<ComponentCompareCenter.Models.Siniflar.PowerSuppleyOzellik>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>ID</th>
+        <th>UrunAd</th>
+        <th>Fiyat</th>
+        <th>Guc</th>
+        <th>GucVerimliligi</th>
+        <th>KabloTipi</th>
+        <th>FanBoyutu</th>
+        <th>PFC</th>
+        <th>Anahtar</th>
+        <th>Model</th>
+        <th>CikisYili</th>
+        <th>TeknikPuan</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>
+                @p.ID
+            </td>
+            <td>
+                @p.Uruns.UrunAd
+            </td>
+            <td>
+                @p.Fiyat
+            </td>
+            <td>
+                @p.Guc
+            </td>
+            <td>
+                @p.GucVerimliligi
+            </td>
+            <td>
+                @p.KabloTipi
+            </td>
+            <td>
+                @p.FanBoyutu
+            </td>
+            <td>
+                @p.PFC
+            </td>
+            <td>
+                @p.Anahtar
+            </td>
+            <td>
+                @p.Model
+            </td>
+            <td>
+                @p.CikisYili
+            </td>
+            <td>
+                @p.TeknikPuan
+            </td>
+            <td><a href="/PowerSupplyOzellik/PowerSupplyOzellikSil/@p.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/PowerSuppleyOzellik/PowerSupplyOzellikGetir/@p.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/PowerSuppleyOzellik/PowerSupplyOzellikEkle" class="btn btn-primary">Ekle</a>
+
+<br />
+<br />
+@{
+    var pagerOptions = new PagedListRenderOptions
+    {
+        LiElementClasses = new[] { "btn", "btn-light", "text-black" }
+    };
+}
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), pagerOptions)

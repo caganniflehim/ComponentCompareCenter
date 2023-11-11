@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ComponentCompareCenter.Models.Siniflar.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>SliderBaşlık</th>
+        <th>SliderAçıklama</th>
+        <th>SliderGörsel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>
+                @s.Baslik
+            </td>
+            <td>
+                @s.Aciklama
+            </td>
+            <td>
+                <img src="@s.Gorsel" style="width:100px;height:50px" />
+            </td>
+            <td><a href="/Slider/SliderSil/@s.SliderId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Slider/SliderGetir/@s.SliderId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Slider/SliderEkle" class="btn btn-primary">Ekle</a>
+

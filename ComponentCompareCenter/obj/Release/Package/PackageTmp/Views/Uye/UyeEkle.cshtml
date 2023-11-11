@@ -1,0 +1,27 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.Uye
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>UyeEkle</h2>
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.uyeAd)
+    @Html.TextBoxFor(x => x.uyeAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.uyeSoyad)
+    @Html.TextBoxFor(x => x.uyeSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.uyeAdresi)
+    @Html.TextBoxFor(x => x.uyeAdresi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.uyeEposta)
+    @Html.TextBoxFor(x => x.uyeEposta, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.uyeTelNo)
+    @Html.TextBoxFor(x => x.uyeTelNo, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

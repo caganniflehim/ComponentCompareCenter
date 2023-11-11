@@ -1,0 +1,63 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.AnakartOzellik
+@{
+    ViewBag.Title = "AnakartOzellikGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>AnakartOzellikGetir</h2>
+
+@using (Html.BeginForm("AnakartOzellikGuncelle", "AnakartOzellik", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.Uruns.UrunID)
+        @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new
+        { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Fiyat)
+        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.YongaSetiModeli)
+        @Html.TextBoxFor(x => x.YongaSetiModeli, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.FormFaktor)
+        @Html.TextBoxFor(x => x.FormFaktor, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.IslemciSoketi)
+        @Html.TextBoxFor(x => x.IslemciSoketi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BellekTeknolojisi)
+        @Html.TextBoxFor(x => x.BellekTeknolojisi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BellekSaatHizi)
+        @Html.TextBoxFor(x => x.BellekSaatHizi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BellekKanali)
+        @Html.TextBoxFor(x => x.BellekKanali, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.M2Yuvasi)
+        @Html.TextBoxFor(x => x.M2Yuvasi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.HizAsirtma)
+        @Html.TextBoxFor(x => x.HizAsirtma, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Bluetooth)
+        @Html.TextBoxFor(x => x.Bluetooth, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Aydınlatma)
+        @Html.TextBoxFor(x => x.Aydınlatma, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.WiFi)
+        @Html.TextBoxFor(x => x.WiFi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CikisYili)
+        @Html.TextBoxFor(x => x.CikisYili, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.TeknikPuan)
+        @Html.TextBoxFor(x => x.TeknikPuan, new { @class = "form-control" })
+        <br />
+
+        @Html.HiddenFor(x => x.ID)
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}

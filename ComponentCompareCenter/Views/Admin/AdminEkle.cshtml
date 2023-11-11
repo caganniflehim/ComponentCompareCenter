@@ -1,0 +1,23 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.Admin
+@{
+    ViewBag.Title = "AdminEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>AdminEkle</h2>
+
+<form class="form-group" method="post">
+
+   
+    
+    @Html.LabelFor(x => x.KullaniciAdi)
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sifre)
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Yetki)
+    @Html.TextBoxFor(x => x.Yetki, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

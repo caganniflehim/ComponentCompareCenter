@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ComponentCompareCenter.Models.Siniflar.Hakkimizda>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>Site Açıklama</th>
+        <th>Güncelleme</th>
+    </tr>
+    @foreach (var h in Model)
+    {
+        <tr>
+            <td>
+                @Html.Raw(h.Açıklama)
+            </td>
+            <td>@Html.ActionLink("Güncelleme", "HakkimizdaGetir", new { id = h.Id })</td>
+        </tr>
+    }
+</table>

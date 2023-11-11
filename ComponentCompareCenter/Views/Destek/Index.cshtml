@@ -1,0 +1,48 @@
+﻿@using ComponentCompareCenter.Models.Siniflar
+@model List<Destek>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-primary table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Sorular</th>
+        <th>Cevaplar</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>
+                @d.Id
+            </td>
+            <td>
+                @d.sorular
+            </td>
+            <td>
+                @d.cevaplar
+            </td>
+
+
+            <td>
+                <a href="/Destek/DestekSil/@d.Id" class="btn btn-outline-primary">Sil</a>
+
+            </td>
+            <td>
+                <a href="/Destek/DestekGetir/@d.Id" class="btn btn-outline-primary">Güncelle</a>
+            </td>
+
+        </tr>
+    }
+
+
+
+
+</table>
+<a href="/Destek/DestekEkle" class="btn btn-outline-primary">Ekle</a>
+

@@ -1,0 +1,21 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.Slider
+@{
+    ViewBag.Title = "SliderEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>SliderEkle</h2>
+
+<form class="form-group" method="post" enctype="multipart/form-data">
+
+    @Html.LabelFor(x => x.Baslik)
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Gorsel)
+    <input class="form-control" type="file" name="sliderimage" required placeholder="Resim Seçiniz" />
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

@@ -1,0 +1,76 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.EkranKartiOzellik
+@{
+    ViewBag.Title = "EkranKartiOzellikEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>EkranKartiOzellikEkle</h2>
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.Uruns.UrunID)
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new
+    { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.İslemciÜretici)
+    @Html.TextBoxFor(x => x.İslemciÜretici, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BellekBoyutu)
+    @Html.TextBoxFor(x => x.BellekBoyutu, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BellekTürü)
+    @Html.TextBoxFor(x => x.BellekTürü, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.GPUÇekirdek)
+    @Html.TextBoxFor(x => x.GPUÇekirdek, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.GrafikKartıGücü)
+    @Html.TextBoxFor(x => x.GrafikKartıGücü, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.VRDestegi)
+    @Html.TextBoxFor(x => x.VRDestegi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ÇokluGPU)
+    @Html.TextBoxFor(x => x.ÇokluGPU, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BaglantiArayuz)
+    @Html.TextBoxFor(x => x.BaglantiArayuz, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.DisplayPort)
+    @Html.TextBoxFor(x => x.DisplayPort, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.HDMI)
+    @Html.TextBoxFor(x => x.HDMI, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SogutmaTipi)
+    @Html.TextBoxFor(x => x.SogutmaTipi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FanSayısı)
+    @Html.TextBoxFor(x => x.FanSayısı, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Grafikİslemci)
+    @Html.TextBoxFor(x => x.Grafikİslemci, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.İslemciÜretici)
+    @Html.TextBoxFor(x => x.İslemciÜretici, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.GPUMimarisi)
+    @Html.TextBoxFor(x => x.GPUMimarisi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Directx)
+    @Html.TextBoxFor(x => x.Directx, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CikisYili)
+    @Html.TextBoxFor(x => x.CikisYili, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeknikPuan)
+    @Html.TextBoxFor(x => x.TeknikPuan, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+</form>

@@ -1,0 +1,27 @@
+﻿@model ComponentCompareCenter.Models.Siniflar.Admin
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>AdminGetir</h2>
+
+@using (Html.BeginForm("AdminGuncelle", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+
+
+        @Html.LabelFor(x => x.KullaniciAdi)
+        @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Sifre)
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Yetki)
+        @Html.TextBoxFor(x => x.Yetki, new { @class = "form-control" })
+        <br />
+
+        @Html.HiddenFor(x => x.AdminID)
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}
